@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | My Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Canvas -->
+    <canvas id="backgroundCanvas"></canvas>
+
+    <!-- 🌠 Space-Themed Top Navbar -->
+    <nav class="space-navbar">
+        <a href="#about" class="planet-link">About</a>
+        <a href="#education" class="planet-link">Education</a>
+        <a href="#achievements" class="planet-link">Achievements</a>
+        <a href="#skills" class="planet-link">Skills</a>
+        <a href="#cv" class="planet-link">CV & BIRTHPLACE</a>
+        <a href="http://127.0.0.1:3000/text_analyzer.html" target="_blank" class="planet-link">Text Analyzer</a>
+    </nav>
+    
+    <!-- Main Top Section -->
+    <section id="main" class="top-section">
+        <h1 class="fade-in">WELCOME TO KARTIK'S WORLD</h1>
+        <div class="profile-container" id="profileContainer">
+            <img src="/assets/main.jpeg" alt="A photo of Kartik" class="profile-pic" id="profilePic">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="content-section">
+        <div class="about-content">
+            <div class="about-photo">
+                <img src="/assets/about.jpeg" alt="Photo of Kartik">
+            </div>
+            <div class="about-text">
+                <h2>ABOUT ME</h2>
+                <p class="fun-paragraph">
+                    Hi! I'm Kartik Gupta — a passionate developer with a curious mind and a creative soul. My journey in tech began with a fascination for how things work behind the screen, and over time, it evolved into a full-blown love for designing and developing interactive digital experiences. From building sleek, responsive front-end interfaces to diving into the logic of back-end systems, I enjoy every step of the development process.
+                    Outside the realm of code, I'm an enthusiastic traveler who believes that exploring new places brings fresh perspectives and fuels creativity. I'm also deeply passionate about rifle shooting, a sport that has taught me focus, discipline, and patience—skills that seamlessly translate into my approach toward problem-solving in tech.
+                    And when it comes to academics, Chemistry has always been my strong suit. I have a natural grasp of its concepts and often find parallels between the structure of atoms and the logic in code—a reminder that patterns and beauty exist in all disciplines.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="animate-section">
+      <div class="education-content">
+        <div class="education-photo zoom-glow">
+          <img src="/assets/education.jpeg" alt="Your Education Photo" />
+        </div>
+        <div class="education-text slide-in-right">
+          <h2 class="neon-flicker">EDUCATION</h2>
+          <p>
+            My academic journey began at <b>OUR LADY OF FATIMA CONVENT SECONDARY SCHOOL</b>, where I studied from pre-primary all the way through secondary school.
+            These early years laid a strong foundation for my intellectual curiosity and discipline.<br><br>
+            I then pursued <b>PCM (PHYSICS, CHEMISTRY, MATHS)</b> during my senior secondary education at <b>DAV PUBLIC SCHOOL</b>, where I deepened my interest in core subjects and actively participated in various co-curricular activities.<br><br>
+            Currently, I am pursuing <b>COMPUTER SCIENCE AND ENGINEERING</b> at <b>INTERNATIONAL INSTITUTE OF INFORMATION TECHNOLOGY, HYDERABAD</b>, where I continue to explore my academic passions and engage in hands-on projects, constantly striving to expand my knowledge and skills.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="achievements-content">
+          <div class="achievements-photo">
+            <img src="/assets/Achievements.jpeg" alt="Achievements">
+          </div>
+          <div class="achievements-text">
+            <h2>ACHIEVEMENTS</h2>
+            <ul>
+              <li>SECURED AIR 640 IN JEE MAINS 2024</li>
+              <li>SECURED AIR 3324 IN JEE ADVANCED 2024</li>
+              <li>SECURED 97.6% IN CLASS 10TH EXAMINATION</li>
+              <li>CLEARED NATIONAL CHEMISTRY OLYMPIAD (NSEC) WITH FLYING COLOURS</li>
+              <li>GOLD MEDALIST IN DISTRICT AND STATE RIFLE SHOOTING CHAMPOINSHIP</li>
+              <li>REPRESENTED INDIA IN A SHOOTING WORLD SERIES</li>
+            </ul>
+          </div>
+        </div>
+    </section>  
+    
+    <!-- Skills Section -->
+    <section id="skills">
+      <div class="skills-content">
+        <div class="skills-photo">
+          <img src="/assets/skills.jpeg" alt="Skills Illustration">
+        </div>
+        <div class="skills-text">
+          <h2 class="section-heading">Skills</h2>
+          <ul>
+            <li><strong>Frontend:</strong> HTML, CSS, JavaScript, React</li>
+            <li><strong>Backend:</strong> Node.js, Express, Firebase</li>
+            <li><strong>Programming:</strong> C, C++, Python</li>
+            <li><strong>Tools:</strong> Git, GitHub, VS Code</li>
+            <li><strong>Others:</strong> IoT Prototyping, Arduino, ESP32</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv">
+      <a href="/assets/KARTIK_CV.pdf" download class="cv-download-btn">Download CV</a>
+      
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="/assets/pic1.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic2.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic3.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic4.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic5.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic6.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic7.jpeg" /></div>
+          <div class="carousel-slide"><img src="/assets/pic8.jpeg" /></div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
