@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects Showcase | Kartik's Starfield</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    /* Keep the exact same style from your code */
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      font-family: 'Share Tech Mono', monospace;
+      color: #0ff;
+      background: url('assets/text.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+    }
+    canvas#starfield { position: fixed; top: 0; left: 0; z-index: -1; }
+    .container {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid #0ff;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #0ff;
+      backdrop-filter: blur(5px);
+      animation: pulseGlow 8s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 30px #0ff; }
+      50% { box-shadow: 0 0 50px #0ff, 0 0 60px rgba(0, 255, 255, 0.3); }
+      100% { box-shadow: 0 0 30px #0ff; }
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff, 0 0 20px rgba(0, 255, 255, 0.5);
+      font-family: 'Orbitron', sans-serif;
+    }
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .project-card {
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #0ff;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 0 20px #0ff;
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-align: center;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #0ff;
+    }
+    .project-card a {
+      text-decoration: none;
+      color: #0f0;
+      font-size: 1.5rem;
+      font-family: 'Orbitron', sans-serif;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+<div class="container">
+  <h2>🚀 MY PROJECTS</h2>
+  <div class="projects">
+    <div class="project-card">
+      <div>Chat-Style Photo Feed Web App</div>
+      <a href="https://github.com/Imking640/Photo-share.git" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <div>AI-Powered Empathetic Chatbot</div>
+      <a href="https://github.com/Imking640/chatbot-server.git" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <div>Smart Room Access Control System</div>
+      <a href="https://github.com/Imking640/iot_project.git" target="_blank">View Project</a>
+    </div>
+  </div>
+</div>
+<script>
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+let stars = [];
+function initStars() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  stars = [];
+  for (let i = 0; i < 400; i++) {
+    stars.push({
+      x: Math.random() * canvas.width * 2 - canvas.width,
+      y: Math.random() * canvas.height * 2 - canvas.height,
+      z: Math.random() * canvas.width,
+      size: Math.random() * 1.5 + 0.5,
+      speed: Math.random() * 2 + 1
+    });
+  }
+}
+function animateStars() {
+  ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < stars.length; i++) {
+    const star = stars[i];
+    star.z -= star.speed;
+    if (star.z <= 0) {
+      star.z = canvas.width;
+      star.x = Math.random() * canvas.width * 2 - canvas.width;
+      star.y = Math.random() * canvas.height * 2 - canvas.height;
+    }
+    const k = 128.0 / star.z;
+    const px = star.x * k + canvas.width / 2;
+    const py = star.y * k + canvas.height / 2;
+    if (px >= 0 && px <= canvas.width && py >= 0 && py <= canvas.height) {
+      const size = (1 - star.z / canvas.width) * star.size;
+      const opacity = (1 - star.z / canvas.width) * 0.8 + 0.2;
+      ctx.fillStyle = `rgba(0, 255, 255, ${opacity})`;
+      ctx.beginPath();
+      ctx.arc(px, py, size, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = size * 3;
+      ctx.shadowColor = "#0ff";
+    }
+  }
+  ctx.shadowBlur = 0;
+  requestAnimationFrame(animateStars);
+}
+window.addEventListener("resize", initStars);
+initStars();
+animateStars();
+</script>
+</body>
+</html>
